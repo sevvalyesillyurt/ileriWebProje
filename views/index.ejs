@@ -1,0 +1,69 @@
+<%- include('includes/head.ejs') %>
+
+  </head>
+  <!-- Body-->
+  <body>
+    <%- include('includes/nav.ejs') %>
+    <div class="pagetitle">
+        <h1>Duyurular</h1>
+        <nav>
+          <ol class="breadcrumb">
+    
+    
+          </ol>
+        </nav>
+      </div><!-- End Page Title -->
+     <!-- Basic table -->
+     <div class="table-responsive">
+      <table class="table">
+          <thead>
+          <tr>
+              <th>#</th>
+              <th>Duyuru Adı</th>
+              <th>Duyuru İçeriği</th>
+              <th>Gösterim Tarihi</th>
+              <th>Bitiş Tarihi</th>
+          </tr>
+  
+          <tbody>
+          <% if(duyurular.length>0) {%>
+          <%  let sayi1=1; %>
+          <% for(let duyuru of duyurular) {%>    
+          <tr>
+              <th scope="row"><%=sayi1 %></th>
+              <td><%=duyuru.duyuru_adi %></td>
+              <td><%=duyuru.duyuru_icerigi %></td>
+              <td><%=duyuru.gost_tarihi %></td>
+              <td><%=duyuru.bitis_tarihi %></td>
+              <td>
+              </td>
+          </tr>
+           <% sayi1++; } %>
+          <% }else { %>
+          <tr>
+              <td colspan="6" style="text-align:center; background-color: rgba(255,0,0,0.2);">Duyuru Yok!</td>
+          </tr>
+  
+          <% } %>
+  
+        
+          
+         
+          
+          </tbody>
+      </table>
+      </div>
+
+      <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+
+    <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="/assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="/assets/vendor/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="/assets/vendor/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="/assets/vendor/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+
+    <%- include('includes/foot.ejs') %>
+
